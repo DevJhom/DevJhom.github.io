@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&display=swap");
+
+:root {
+    --color: #fff
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Cardo', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    background-color: #212121;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    height: 400px;
+    width: 300px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+/* Add an overlay on top of image */
+.card::after {
+    content: '';
+    height: 400px;
+    width: 300px;
+    border-radius: 15px;
+    background-image: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.card:hover {
+    transform: scale(0.92);
+    transition: transform 0.3s ease-out;
+}
+
+.card:hover .content {
+    transform: translateY(0);
+
+}
+
+.card:hover .content p, .card:hover .content button {
+    visibility: visible;
+}
+
+.card:hover::after {
+    opacity: 0.9;
+}
+
+.card img {
+    position: absolute;
+    height: 400px;
+    width: 300px;
+    border-radius: 15px;
+    z-index: -1;
+}
+
+.content {
+    position: absolute;
+    bottom: 0;
+    margin: 20px 25px;
+    z-index: 1;
+    transform: translateY(80%);
+    transition: transform 0.2s ease;
+}
+
+.content h2 {
+    color: var(--color);
+}
+
+.content p {
+    color: var(--color);
+    visibility: hidden;
+}
+
+.content button {
+    background-color: transparent;
+    padding: 10px 20px;
+    color: var(--color);
+    font-family: inherit;
+    border: 1px solid var(--color);
+    border-radius: 7px;
+    float: right;
+    visibility: hidden;
+}
+
+.content button:hover {
+    background-color: var(--color);
+    color: #000;
+}
+

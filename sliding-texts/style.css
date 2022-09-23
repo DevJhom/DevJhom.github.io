@@ -1,0 +1,40 @@
+body {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #0B0E14;
+}
+
+span {
+    display: block;
+    color: #fff;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    height: 2.5rem;
+}
+
+.wrapper {
+    height: 2.5rem;
+    width: auto;
+    overflow: hidden;
+}
+
+.wrapper span {
+    color: #FF8F40;
+    animation: slider 2s forwards;
+    animation-delay: 1s;
+}
+
+@keyframes slider {
+    0% {
+        transform: translateY(0%);
+    }
+    60% {
+        transform: translateY(20%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}

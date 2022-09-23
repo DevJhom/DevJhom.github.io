@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+    --theme-color: #F5B329;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    background-color: #000000;
+}
+
+img#planet {
+    position: absolute;
+    top: 5%;
+    left: 35%;
+    width: 47vw;
+    height: 47vw;
+    z-index: -1;
+}
+
+header {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 5%;
+    width: 100%;
+    top: 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--theme-color);
+}
+
+.menu {
+    display: flex;
+    gap: 2em;
+    font-size: 1.1rem;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu a:hover {
+    color: var(--theme-color);
+}
+
+.menu li {
+    list-style-type: none;
+    padding: 0.4rem 0.9rem;
+}
+
+.planets {
+    position: relative;
+}
+
+.dropdown {
+    position: absolute;
+    background-color: var(--theme-color);
+    display: none;
+    border-radius: 3px;
+    top: 3.5rem;
+}
+
+.dropdown li {
+    padding: 1rem 0.5rem;
+    width: 8em;
+    text-align: center;
+}
+
+.dropdown li:hover {
+    background-color: #111;
+}
+
+.cities:hover .dropdown{
+    display: block;
+}
+
+/* Responsive using Checkbox technique*/
+
+input[type=checkbox]{
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    user-select: none;
+}
+
+@media (max-width: 768px) {
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        left: 0;
+        height: calc(100vh - 100px);
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .menu > li {
+        margin-top: 15px;
+    }
+
+    .menu li:hover {
+        display: inline-block;
+        background-color: #111;
+        transition: 0.3s ease;
+    }
+
+    input[type=checkbox]:checked ~ .menu {
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .dropdown {
+        background-color: #111;
+        left: 50%;
+        top: 30px;
+        transform: translateX(35%);
+    }
+
+    .dropdown li:hover {
+        background-color: var(--theme-color);
+        transform: scale(0.97);
+    }
+
+    .dropdown li a:hover {
+        color: #000000;
+    }
+}
+
+/* Content */
+
+main {
+    width: 60vw;
+    height: auto;
+}
+
+h1.title {
+    font-size: 7rem;
+    line-height: 7rem;
+    margin: 0;
+    z-index: 1;
+}
+
+p.title-bottom {
+    font-size: 1rem;
+    margin: 1rem 0 0 5px;
+    letter-spacing: 1px;
+}
+
+.content {
+    float: right;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+}
+
+p.text {
+    text-align: right;
+    line-height: 1.3rem;
+    margin: 0;
+}
+
+a.more {
+    align-self: flex-end;
+    margin-top: 1rem;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px solid #fff;
+}
+
+a:hover {
+    color: #F5B329;
+}
+
+@media (max-width: 912px) {
+
+    img#planet {
+        top: 18%;
+        width: 500px;
+        height: 500px;
+    }
+
+    .content {
+        width: 80%;
+        margin-top: 20%;
+    }
+
+    h1.title {
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+
+    p.text {
+        margin-top: 20%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    img#planet {
+        top: 18%;
+        width: 260px;
+        height: 260px;
+    }
+
+    h1.title {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+}
