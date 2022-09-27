@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>My project</title>
+  </head>
+
+  <p>Select duration</p>
+  <div class="radio">
+    <input class="radio__input" type="radio" name="duration" id="option1" value="3" checked>
+    <label class="radio__label" for="option1">3s</label>
+    <input class="radio__input" type="radio" name="duration" id="option2" value="5">
+    <label class="radio__label" for="option2">5s</label>
+    <input class="radio__input" type="radio" name="duration" id="option3" value="10">
+    <label class="radio__label" for="option3">10s</label>
+  </div>
+
+    <p class="percentage" id="percentage">0%</p>
+    <div class="outline" id="outline">
+      <div class="line" id="line"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
